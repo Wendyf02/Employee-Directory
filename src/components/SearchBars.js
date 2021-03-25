@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/searchbars.css"
+import "../style/searchBars.css"
 
 function searchbars(props) {
   return (
@@ -13,7 +13,7 @@ function searchbars(props) {
           name="search"
           type="text"
           className="form-control"
-          placeholder="Search directory for employee"
+          placeholder="Search directory for Employee"
           id="search"
         />
         <br />
