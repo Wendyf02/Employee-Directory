@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/searchBars.css"
+import Button from 'react-bootstrap/Button';
 
 function searchbars(props) {
   return (
@@ -16,11 +17,7 @@ function searchbars(props) {
           placeholder="Search directory for Employee"
           id="search"
         />
-        <br />
-        <button onClick={props.handleFormSubmit} className="btn btn-primary">
-          Search
-        </button>
-        
+      
         </div>
       </div>
     </form>

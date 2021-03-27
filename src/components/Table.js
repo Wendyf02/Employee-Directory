@@ -2,16 +2,16 @@ import React from "react";
 import API from "../utils/Api";
 import "../style/table.css"
 
-import DateFormat from 'dataformat';
+// import DateFormat from 'dataformat';
 
-class Table extends React.component {
+class Table extends React.Component {
 
   state = {
     result: {},
     search: ""
   };
 
-
+//Api call for randomuser
   componentDidMount() {
     API.ApiSearch()
     .then(res => {
@@ -41,3 +41,5 @@ class Table extends React.component {
 
   
 }
+
+export default Table;
