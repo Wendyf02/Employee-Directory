@@ -1,8 +1,9 @@
 import React from "react";
-import "../style/searchBars.css"
-import Button from 'react-bootstrap/Button';
+import "../style/searchBar.css"
+// import Button from 'react-bootstrap/Button';
 
-function searchbars(props) {
+const SearchBar = (props) =>  {
+
   return (
     <form>
       <div className="form-group search-widget">
@@ -10,18 +11,18 @@ function searchbars(props) {
 
         <input
           onChange={props.handleInputChange}
-          value={props.searcg}
+          value={props.search}
           name="search"
           type="text"
           className="form-control"
           placeholder="Search directory for Employee"
           id="search"
         />
-      
+    
         </div>
       </div>
     </form>
   );
 }
 
-export default SearchForm;
+export default SearchBar;

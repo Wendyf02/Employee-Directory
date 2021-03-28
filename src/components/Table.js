@@ -1,13 +1,15 @@
 import React from "react";
-import API from "../utils/Api";
+import API from "../utils/Api.js";
+import Search from "./SearchBar"
 import "../style/table.css"
 
-// import DateFormat from 'dataformat';
+import DateFormat from 'dataformat';
 
 class Table extends React.Component {
 
   state = {
-    result: {},
+    sortOrder: "",
+    results: [],
     search: ""
   };
 
@@ -81,16 +83,16 @@ class Table extends React.Component {
 
 // render items
 
-  render() {
+render() {
+
+  return (  
 
     <div>
-
       <Search handleInputchange={this.handleInputchange}
         search={this.state.search} />
 
       <div classNmae="table-responsive">   
         <table className="table table-striped table-responsive  text-center table-hover"> 
-      
           <thead>
             <tr>
               <th>Image</th>
@@ -101,47 +103,45 @@ class Table extends React.Component {
               <th>DOB</th>
             </tr>
           </thead>
-      
-      
-      
-      
-     
 
+         {
+         // first name sort
+          this.state.result && this.state.map(item =>
+            item.name.first.toLowerCae().include(this.state.search) ?
+            <tbody key={item.login.uuid}>
+              <tr>
+                <td><img src={item.picture.thumbnail} className="rounded-circle" alr="thumbnail" /></td>
+                <td>{item.name.first}</td>
+                <td>{item.name.last}</td>
+                <td>{item.name.phone}</td>
+                <td>{item.name.email}</td>
+                <td>{DateFormat(item.dob.date, "mediumDate")}</td>
+              </tr>
+            </tbody>
 
+            :
+            //last name sort
+            item.name.last.toLowerCae().include(this.state.search) ?
+            <tbody key={item.login.uuid}>
+              <tr>
+                <td><img src={item.picture.thumbnail} className="rounded-circle" alr="thumbnail" /></td>
+                <td>{item.name.first}</td>
+                <td>{item.name.last}</td>
+                <td>{item.name.phone}</td>
+                <td>{item.name.email}</td>
+                <td>{DateFormat(item.dob.date, "mediumDate")}</td>
+              </tr>
+            </tbody>
+             :
+             null
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          )}
         </table>
-    
       </div>
     </div>
+  )
 
   }
-
-  
 }
 
 export default Table;
