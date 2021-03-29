@@ -1,9 +1,9 @@
 import React from "react";
 import API from "../utils/Api.js";
-import Search from "./SearchBar"
+import Search from "../components/SearchBar"
 import "../style/table.css"
 
-import DateFormat from 'dataformat';
+import DateFormat from 'dateformat';
 
 class Table extends React.Component {
 
@@ -51,7 +51,7 @@ class Table extends React.Component {
         sortedEmployees.reverse();
         this.setState({ sortOrder: "ASC "});
      } else {
-         this>this.setState({ sortOrder: "DESC" });
+         this.setState({ sortOrder: "DESC" });
      }
        this.setState({ results: sortedEmployees })
 
@@ -74,7 +74,7 @@ class Table extends React.Component {
        sortedEmployees.reverse();
        this.setState({ sortOrder: "ASC "});
     } else {
-        this>this.setState({ sortOrder: "DESC" });
+        this.setState({ sortOrder: "DESC" });
     }
       this.setState({ results: sortedEmployees })
 
@@ -91,7 +91,7 @@ render() {
       <Search handleInputchange={this.handleInputchange}
         search={this.state.search} />
 
-      <div classNmae="table-responsive">   
+      <div className="table-responsive">   
         <table className="table table-striped table-responsive  text-center table-hover"> 
           <thead>
             <tr>
@@ -106,8 +106,8 @@ render() {
 
          {
          // first name sort
-          this.state.result && this.state.map(item =>
-            item.name.first.toLowerCae().include(this.state.search) ?
+          this.state.results && this.state.results.map(item =>
+            item.name.first.toLowerCase().includes(this.state.search) ?
             <tbody key={item.login.uuid}>
               <tr>
                 <td><img src={item.picture.thumbnail} className="rounded-circle" alr="thumbnail" /></td>
@@ -121,7 +121,7 @@ render() {
 
             :
             //last name sort
-            item.name.last.toLowerCae().include(this.state.search) ?
+            item.name.last.toLowerCase().includes(this.state.search) ?
             <tbody key={item.login.uuid}>
               <tr>
                 <td><img src={item.picture.thumbnail} className="rounded-circle" alr="thumbnail" /></td>

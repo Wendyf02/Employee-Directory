@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = 'https://randomuser.me/api/';
+const url = 'https://randomuser.me/api/?results=30';
 
 //api call 
 export default {
