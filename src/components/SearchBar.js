@@ -10,7 +10,7 @@ const SearchBar = (props) =>  {
         <div className="input-group mb-3">
 
         <input
-          onChange={props.handleInputChange}
+          onChange={props.onChange}
           value={props.search}
           name="search"
           type="text"

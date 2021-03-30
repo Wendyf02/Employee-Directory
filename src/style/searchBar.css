@@ -5,14 +5,14 @@
 }
 
 .btn-primary{
-    color:white;
-    background-color: crimson;
+    color:rgb(131, 9, 9);
+    background-color: rgb(77, 75, 75);
     border: none;
     box-shadow: none;
 }
 
 .btn-primary:hover {
-    color: darkgrey;
-    background-color: dee2e6;
+    color: rgb(78, 76, 76);
+    background-color:rgb(247, 245, 241);
     cursor:pointer;
 }

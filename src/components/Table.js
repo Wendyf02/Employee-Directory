@@ -26,6 +26,7 @@ class Table extends React.Component {
   handleInputchange = event => {
      
     if (event.target.name === "search") {
+      
       const searchTerm = event.target.value.toLowerCase();
       this.setState({
          search: searchTerm
@@ -88,7 +89,7 @@ render() {
   return (  
 
     <div>
-      <Search handleInputchange={this.handleInputchange}
+      <Search onChange={this.handleInputchange}
         search={this.state.search} />
 
       <div className="table-responsive">   
