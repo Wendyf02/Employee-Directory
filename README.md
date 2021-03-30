@@ -41,8 +41,6 @@
   Email: cammomila444@gmail.com          
   Deploy:https://wendyf02.github.io/employee-directory/       
 
-  ![GitHub](public/images/workout1.png)  
+ 
 
-  ![GitHub](public/images/workout2.png)   
-
-  ![GitHub](public/images/workout3.png)  
+   
